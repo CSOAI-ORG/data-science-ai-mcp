@@ -1,0 +1,10 @@
+name: data-science-ai-mcp
+description: "MEOK AI Labs — Machine learning and data science toolkit for AI agents: feature importance"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/data-science-ai-mcp
+license: MIT
+categories: [Data Science, Machine Learning]
+tags: [data-science, machine-learning, statistical-analysis, data-mining, pandas]
+runtime: python
+entrypoint: server.py
