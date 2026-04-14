@@ -372,7 +372,7 @@ def _correlation_finder(variables: list[dict]) -> dict:
         "multicollinearity_warnings": multicollinear,
         "recommendations": [
             f"{'Found ' + str(len(multicollinear)) + ' highly correlated pairs (>0.9) - consider removing one from each pair' if multicollinear else 'No multicollinearity detected'}",
-            f"{'Strong correlations found between: ' + ', '.join(f'{p[\"variable_a\"]} & {p[\"variable_b\"]}' for p in strong[:3]) if strong else 'No strong correlations found'}",
+            "Strong correlations found between: " + ", ".join(p["variable_a"] + " & " + p["variable_b"] for p in strong[:3]) if strong else "No strong correlations found",
             "Use VIF (Variance Inflation Factor) for more robust multicollinearity detection",
         ],
     }
@@ -512,8 +512,7 @@ def _visualization_recommender(data_description: dict) -> dict:
 # ---------------------------------------------------------------------------
 mcp = FastMCP(
     "Data Science AI MCP",
-    instructions="ML/Data Science toolkit: feature importance ranking, model comparison, dataset profiling, correlation finding, and visualization recommendations. By MEOK AI Labs.",
-)
+    instructions="ML/Data Science toolkit: feature importance ranking, model comparison, dataset profiling, correlation finding, and visualization recommendations. By MEOK AI Labs.")
 
 
 @mcp.tool()
