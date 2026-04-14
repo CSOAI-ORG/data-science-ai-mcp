@@ -12,6 +12,11 @@ Install: pip install mcp
 Run:     python server.py
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import math
 import statistics
 from collections import Counter, defaultdict
@@ -517,7 +522,7 @@ mcp = FastMCP(
 
 @mcp.tool()
 def feature_importance(features: list[dict], target_type: str = "classification",
-                       method: str = "statistical") -> dict:
+                       method: str = "statistical", api_key: str = "") -> dict:
     """Rank features by estimated importance for a prediction task.
 
     Args:
@@ -525,6 +530,10 @@ def feature_importance(features: list[dict], target_type: str = "classification"
         target_type: ML task type (classification, regression)
         method: Importance method (statistical, permutation, tree_based)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -535,7 +544,7 @@ def feature_importance(features: list[dict], target_type: str = "classification"
 
 
 @mcp.tool()
-def model_comparison(models: list[dict], task_type: str = "classification") -> dict:
+def model_comparison(models: list[dict], task_type: str = "classification", api_key: str = "") -> dict:
     """Compare ML models across metrics. Returns composite scores, speed
     comparisons, and recommendations for production vs accuracy.
 
@@ -543,6 +552,10 @@ def model_comparison(models: list[dict], task_type: str = "classification") -> d
         models: Model results as [{"name": "XGBoost", "accuracy": 0.92, "precision": 0.90, "recall": 0.88, "f1": 0.89, "training_time_sec": 120, "inference_ms": 5, "parameters": 50000}]
         task_type: ML task (classification, regression, ranking)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -554,7 +567,7 @@ def model_comparison(models: list[dict], task_type: str = "classification") -> d
 
 @mcp.tool()
 def dataset_profiler(columns: list[dict], row_count: int = 0,
-                     sample_values: dict = {}) -> dict:
+                     sample_values: dict = {}, api_key: str = "") -> dict:
     """Profile a dataset: completeness, quality issues, type distribution,
     and per-column statistics.
 
@@ -563,6 +576,10 @@ def dataset_profiler(columns: list[dict], row_count: int = 0,
         row_count: Total number of rows
         sample_values: Optional sample values per column as {"col_name": [val1, val2, ...]}
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -573,13 +590,17 @@ def dataset_profiler(columns: list[dict], row_count: int = 0,
 
 
 @mcp.tool()
-def correlation_finder(variables: list[dict]) -> dict:
+def correlation_finder(variables: list[dict], api_key: str = "") -> dict:
     """Compute pairwise Pearson correlations between variables. Flags strong
     correlations and multicollinearity warnings.
 
     Args:
         variables: Variables with values as [{"name": "height", "values": [170, 175, 160, ...]}, {"name": "weight", "values": [70, 80, 55, ...]}]
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}
@@ -590,13 +611,17 @@ def correlation_finder(variables: list[dict]) -> dict:
 
 
 @mcp.tool()
-def visualization_recommender(data_description: dict) -> dict:
+def visualization_recommender(data_description: dict, api_key: str = "") -> dict:
     """Recommend visualizations based on data characteristics and analysis goal.
     Returns chart types, code hints, and library suggestions.
 
     Args:
         data_description: Dataset info as {"columns": [{"name": "x", "type": "numeric", "cardinality": 50}], "row_count": 1000, "goal": "explore"}. Goals: explore, comparison, composition, distribution, relationship
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     err = _check_rate_limit()
     if err:
         return {"error": err}

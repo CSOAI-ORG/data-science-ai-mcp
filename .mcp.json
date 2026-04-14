@@ -1,24 +1,109 @@
 {
   "name": "data-science-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Machine learning and data science toolkit for AI agents: feature importance",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/data-science-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "**By MEOK AI Labs** | [meok.ai](https://meok.ai)",
+  "version": "1.0.0",
   "tools": [
-    "feature_importance",
-    "model_comparison",
-    "dataset_profiler",
-    "correlation_finder",
-    "visualization_recommender"
-  ],
-  "categories": [
-    "Data Science",
-    "Machine Learning"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "feature_importance",
+      "description": "Rank features by estimated importance for a prediction task.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "target_type": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "features"
+        ]
+      }
+    },
+    {
+      "name": "model_comparison",
+      "description": "Compare ML models across metrics. Returns composite scores, speed",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "models": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "task_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "models"
+        ]
+      }
+    },
+    {
+      "name": "dataset_profiler",
+      "description": "Profile a dataset: completeness, quality issues, type distribution,",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "row_count": {
+            "type": "integer"
+          },
+          "sample_values": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "columns"
+        ]
+      }
+    },
+    {
+      "name": "correlation_finder",
+      "description": "Compute pairwise Pearson correlations between variables. Flags strong",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "variables": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "variables"
+        ]
+      }
+    },
+    {
+      "name": "visualization_recommender",
+      "description": "Recommend visualizations based on data characteristics and analysis goal.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "data_description": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "data_description"
+        ]
+      }
+    }
+  ]
 }
