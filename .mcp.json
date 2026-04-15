@@ -1,6 +1,6 @@
 {
   "name": "data-science-ai-mcp",
-  "description": "**By MEOK AI Labs** | [meok.ai](https://meok.ai)",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 ML/Data Science toolkit: feature importance ranking, model comparison, dataset profiling, correlatio",
   "version": "1.0.0",
   "tools": [
     {
@@ -10,10 +10,7 @@
         "type": "object",
         "properties": {
           "features": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "target_type": {
             "type": "string"
@@ -34,10 +31,7 @@
         "type": "object",
         "properties": {
           "models": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "task_type": {
             "type": "string"
@@ -55,10 +49,7 @@
         "type": "object",
         "properties": {
           "columns": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "row_count": {
             "type": "integer"
@@ -79,10 +70,7 @@
         "type": "object",
         "properties": {
           "variables": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           }
         },
         "required": [

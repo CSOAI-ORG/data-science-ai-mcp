@@ -1,5 +1,6 @@
 name: data-science-ai-mcp
-description: '**By MEOK AI Labs** | [meok.ai](https://meok.ai)'
+description: 'ML/Data Science toolkit: feature importance ranking, model comparison,
+  dataset profiling, correlatio'
 version: 1.0.0
 tools:
 - name: feature_importance
