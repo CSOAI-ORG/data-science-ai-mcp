@@ -529,6 +529,21 @@ def feature_importance(features: list[dict], target_type: str = "classification"
         features: Feature metadata as [{"name": "age", "type": "numeric", "cardinality": 50, "missing_pct": 2, "correlation_with_target": 0.65, "variance": 150}]
         target_type: ML task type (classification, regression)
         method: Importance method (statistical, permutation, tree_based)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -551,6 +566,20 @@ def model_comparison(models: list[dict], task_type: str = "classification", api_
     Args:
         models: Model results as [{"name": "XGBoost", "accuracy": 0.92, "precision": 0.90, "recall": 0.88, "f1": 0.89, "training_time_sec": 120, "inference_ms": 5, "parameters": 50000}]
         task_type: ML task (classification, regression, ranking)
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -575,6 +604,21 @@ def dataset_profiler(columns: list[dict], row_count: int = 0,
         columns: Column metadata as [{"name": "age", "type": "numeric", "non_null_count": 950, "unique_count": 80, "min": 18, "max": 90, "mean": 35.2, "std": 12.1}]
         row_count: Total number of rows
         sample_values: Optional sample values per column as {"col_name": [val1, val2, ...]}
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -596,6 +640,21 @@ def correlation_finder(variables: list[dict], api_key: str = "") -> dict:
 
     Args:
         variables: Variables with values as [{"name": "height", "values": [170, 175, 160, ...]}, {"name": "weight", "values": [70, 80, 55, ...]}]
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -617,6 +676,21 @@ def visualization_recommender(data_description: dict, api_key: str = "") -> dict
 
     Args:
         data_description: Dataset info as {"columns": [{"name": "x", "type": "numeric", "cardinality": 50}], "row_count": 1000, "goal": "explore"}. Goals: explore, comparison, composition, distribution, relationship
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
