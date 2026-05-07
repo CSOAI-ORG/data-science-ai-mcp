@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "data-science-ai-mcp"
-version = "1.0.0"
+version = "1.0.2"
 description = "Data Science Ai tools for AI agents. Capabilities: feature importance, model comparison, dataset profiler. Built by MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
