@@ -1,3 +1,7 @@
+[![data-science-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
+[![PyPI](https://img.shields.io/pypi/v/data-science-ai-mcp)](https://pypi.org/project/data-science-ai-mcp/)
+
 [![data-science-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp)
 
 <div align="center">
