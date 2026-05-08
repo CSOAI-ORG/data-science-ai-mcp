@@ -1,45 +1,59 @@
-[![data-science-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/data-science-ai-mcp)](https://pypi.org/project/data-science-ai-mcp/)
-
-[![data-science-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/data-science-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/data-science-ai-mcp)](https://github.com/CSOAI-ORG/data-science-ai-mcp/stargazers)
+# Data Science Ai MCP
 
-# udataU scienceU aiU mcp
+**MCP server for data science ai mcp operations**
 
-****By MEOK AI Labs** | [meok.ai](https://meok.ai)**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/data-science-ai-mcp)](https://www.npmjs.com/package/@meok-ai/data-science-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-data-science-ai-mcp)](https://pypi.org/project/meok-data-science-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/data-science-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Data Science Ai MCP provides AI-powered tools via the Model Context Protocol (MCP).
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `feature_importance` | Rank features by estimated importance for a prediction task. |
+| `model_comparison` | Compare ML models across metrics. Returns composite scores, speed |
+| `dataset_profiler` | Profile a dataset: completeness, quality issues, type distribution, |
+| `correlation_finder` | Compute pairwise Pearson correlations between variables. Flags strong |
+| `visualization_recommender` | Recommend visualizations based on data characteristics and analysis goal. |
 
 ## Installation
 
 ```bash
-pip install data-science-ai-mcp
-# or
-npm install -g @meok-ai/data-science-ai-mcp
+pip install meok-data-science-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "data-science-ai-mcp": {
+      "command": "python",
+      "args": ["-m", "meok_data_science_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/data-science-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
