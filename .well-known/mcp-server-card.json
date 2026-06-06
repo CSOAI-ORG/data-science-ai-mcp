@@ -1,0 +1,28 @@
+{
+  "name": "data-science-ai-mcp",
+  "title": "Data Science Ai Mcp",
+  "description": "Data Science Ai tools for AI agents. Capabilities: feature importance, model comparison, dataset profiler. Built by MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "feature_importance"
+    },
+    {
+      "name": "model_comparison"
+    },
+    {
+      "name": "dataset_profiler"
+    },
+    {
+      "name": "correlation_finder"
+    },
+    {
+      "name": "visualization_recommender"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# data-science-ai-mcp - Auto-trigger Rules
+
+When the user asks about data science, use data-science-ai-mcp tools: feature_importance, model_comparison, dataset_profiler, correlation_finder, visualization_recommender
+
+**MCP server for data science ai mcp operations**
+
+Install: `pip install data-science-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.
