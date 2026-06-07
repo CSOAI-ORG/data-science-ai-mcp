@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "data-science-ai-mcp",
+    "description": "Data Science Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "data-science-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "feature_importance",
+      "model_comparison",
+      "dataset_profiler",
+      "correlation_finder",
+      "visualization_recommender"
+    ]
+  }
+}

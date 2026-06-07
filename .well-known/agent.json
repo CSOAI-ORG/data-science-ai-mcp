@@ -1,0 +1,68 @@
+{
+  "name": "data-science-ai-mcp",
+  "description": "Data Science Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/data-science-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "feature_importance",
+      "name": "Feature Importance",
+      "description": "feature_importance via data-science-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "model_comparison",
+      "name": "Model Comparison",
+      "description": "model_comparison via data-science-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "dataset_profiler",
+      "name": "Dataset Profiler",
+      "description": "dataset_profiler via data-science-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "correlation_finder",
+      "name": "Correlation Finder",
+      "description": "correlation_finder via data-science-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "visualization_recommender",
+      "name": "Visualization Recommender",
+      "description": "visualization_recommender via data-science-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
